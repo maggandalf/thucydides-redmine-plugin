@@ -1,0 +1,28 @@
+ - (redmine.accessKey or redmine.user, redmine.password) and redmine.url and redmine.wiki.renderer properties are required.
+ - env. variable thucydides.skip.redmine.updates are used instead of thucydides.skip.jira.updates
+ - NoSuchIssueException is used.
+ - IssueTrackerUpdateException is used.
+ - Groovy classes are used.
+ - IssueTracker is used.
+ - TestResultComment is used.
+ - Injectors.getInstance() method should be parameterized to allow returns any kind of Thucydides module, not only ThucydidesJiraModule.
+ - Methods from JiraListener:
+ 	* shouldUpdateWorkflow
+ 	* stripInitialHashesFrom
+ 	* updateIssues
+ 	* updateIssue
+ 	* updateIssueStatusFor
+ 	* addOrUpdateCommentFor
+ 	* findExistingCommentIn
+ 	* dryRun
+ 	* logIssueTracking
+ 	* linkToReport
+ 	* testResultComment
+ - JIRA_PROJECT should be renamed to REDMINE_PROJECT but because JIRA_PROJECT definition is at Thucydides env. variables, the same is used. Maybe should be refactored to PROJECT_NAME
+
+Things I have to change: 
+
+- thucydides.jira.workflow.active is still used in Groovy class.
+- thucydides.jira.workflow is still used in Groovy class.
+
+ 	  
